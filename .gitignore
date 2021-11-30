@@ -1,0 +1,7 @@
+*.iml
+.DS_Store
+/out
+/captures
+.externalNativeBuild
+.cxx
+/.idea/*
