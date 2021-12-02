@@ -2,6 +2,7 @@
 
 | Problem | Solution |
 | ------- | -------- |
+| [2091. Removing Minimum and Maximum From Array](https://leetcode.com/problems/removing-minimum-and-maximum-from-array/) | [Java](src/leetcode/TargetIndicesInArray.java) |
 | [2089. Find Target Indices After Sorting Array](https://leetcode.com/problems/find-target-indices-after-sorting-array/) | [Java](src/leetcode/TargetIndicesInArray.java) |
 | [2085. Count Common Words With One Occurrence](https://leetcode.com/problems/count-common-words-with-one-occurrence/) | [Java](src/leetcode/L2085.java) |
 | [2078. Two Furthest Houses With Different Colors](https://leetcode.com/problems/two-furthest-houses-with-different-colors/) | [Java](src/leetcode/L2078.java) |
