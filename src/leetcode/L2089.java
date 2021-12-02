@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 // 2089. https://leetcode.com/problems/find-target-indices-after-sorting-array/
-public class TargetIndicesInArray {
+public class L2089 {
 	public static void main(String[] args) {
-		System.out.println(new TargetIndicesInArray().targetIndices(new int[]{1, 2, 5, 2, 3}, 2));
-		System.out.println(new TargetIndicesInArray().targetIndices(new int[]{1, 2, 5, 2, 3}, 3));
-		System.out.println(new TargetIndicesInArray().targetIndices(new int[]{1, 2, 5, 2, 3}, 5));
-		System.out.println(new TargetIndicesInArray().targetIndices(new int[]{1, 2, 5, 2, 3}, 4));
+		System.out.println(new L2089().targetIndices(new int[]{1, 2, 5, 2, 3}, 2));
+		System.out.println(new L2089().targetIndices(new int[]{1, 2, 5, 2, 3}, 3));
+		System.out.println(new L2089().targetIndices(new int[]{1, 2, 5, 2, 3}, 5));
+		System.out.println(new L2089().targetIndices(new int[]{1, 2, 5, 2, 3}, 4));
 	}
 
 	List<Integer> list = new ArrayList<>();

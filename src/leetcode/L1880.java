@@ -1,11 +1,11 @@
 package leetcode;
 
 // 1880. https://leetcode.com/problems/check-if-word-equals-summation-of-two-words/
-public class WordIsSumOfTwoWords {
+public class L1880 {
 	public static void main(String[] args) {
-		System.out.println(new WordIsSumOfTwoWords().isSumEqual("acb", "cba", "cdb"));
-		System.out.println(new WordIsSumOfTwoWords().isSumEqual("aaa", "a", "aab"));
-		System.out.println(new WordIsSumOfTwoWords().isSumEqual("aaa", "a", "aaaa"));
+		System.out.println(new L1880().isSumEqual("acb", "cba", "cdb"));
+		System.out.println(new L1880().isSumEqual("aaa", "a", "aab"));
+		System.out.println(new L1880().isSumEqual("aaa", "a", "aaaa"));
 	}
 
 	public boolean isSumEqual(String firstWord, String secondWord, String targetWord) {

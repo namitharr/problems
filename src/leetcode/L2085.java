@@ -3,6 +3,8 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
+import static leetcode.util.ArrayUtil.stringArray;
+
 // 2085. Count Common Words With One Occurrence
 // https://leetcode.com/problems/count-common-words-with-one-occurrence/
 public class L2085 {
@@ -19,10 +21,6 @@ public class L2085 {
 						stringArray("a", "ab"),
 						stringArray("a", "a", "a", "ab")
 		));
-	}
-
-	public static String[] stringArray(String... strings) {
-		return strings;
 	}
 
 	public int countWords(String[] words1, String[] words2) {
