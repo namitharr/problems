@@ -17,17 +17,20 @@ class Solution {
 		solution.play(5);
 		solution.play(4);
 		solution.play(4);
+		solution.play(4);
+		solution.play(4);
+		solution.play(4);
 	}
 
-	int winner = 0;
 	int player = 1;
 	int numPlayers = 2;
+	int winner = 0;
 	int rowLength = 6;
 	int columnLength = 7;
-	static int[][] gameState;
+	int[][] board;
 
 	Solution() {
-		gameState = new int[rowLength][columnLength];
+		board = new int[rowLength][columnLength];
 	}
 
 	private void play(int column) {
@@ -36,14 +39,14 @@ class Solution {
 			return;
 		}
 
-		if (gameState[0][column] != 0) {
+		if (board[0][column] != 0) {
 			System.out.println("Column full! Try another move");
 			return;
 		}
 
-		for (int i = gameState.length - 1; i >= 0; i--) {
-			if (gameState[i][column] == 0) {
-				gameState[i][column] = player;
+		for (int i = board.length - 1; i >= 0; i--) {
+			if (board[i][column] == 0) {
+				board[i][column] = player;
 				printBoard();
 				if (checkWinner(i, column)) {
 					System.out.println("Player " + player + " wins!");
@@ -64,8 +67,8 @@ class Solution {
 
 	private boolean checkColumn(int row, int column) {
 		int count = 0;
-		for (int i = row; i < gameState.length; i++) {
-			if (gameState[i][column] == player) ++count;
+		for (int i = row; i < board.length; i++) {
+			if (board[i][column] == player) ++count;
 			else break;
 		}
 
@@ -74,8 +77,8 @@ class Solution {
 
 	private boolean checkRow(int row) {
 		int count = 0;
-		for (int i = 0; i < gameState[row].length; i++) {
-			if (gameState[row][i] == player) {
+		for (int i = 0; i < board[row].length; i++) {
+			if (board[row][i] == player) {
 				++count;
 				if (count == 4) return true;
 			} else count = 0;
@@ -86,24 +89,24 @@ class Solution {
 
 	private boolean checkDiagonal(int row, int column) {
 		int count = 0;
-		for (int i = row, j = column; i < gameState.length && j < gameState.length; i++, j++) {
-			if (gameState[i][j] == player) {
+		for (int i = row, j = column; i < board.length && j < board.length; i++, j++) {
+			if (board[i][j] == player) {
 				++count;
 				if (count == 4) return true;
 			} else count = 0;
 		}
 
 		count = 0;
-		for (int i = row, j = column; i >= 0 && j < gameState.length; i--, j++) {
-			if (gameState[i][j] == player) {
+		for (int i = row, j = column; i >= 0 && j < board.length; i--, j++) {
+			if (board[i][j] == player) {
 				++count;
 				if (count == 4) return true;
 			} else count = 0;
 		}
 
 		count = 0;
-		for (int i = row, j = column; i < gameState.length && j >= 0; i++, j--) {
-			if (gameState[i][j] == player) {
+		for (int i = row, j = column; i < board.length && j >= 0; i++, j--) {
+			if (board[i][j] == player) {
 				++count;
 				if (count == 4) return true;
 			} else count = 0;
@@ -111,7 +114,7 @@ class Solution {
 
 		count = 0;
 		for (int i = row, j = column; i >= 0 && j >= 0; i--, j--) {
-			if (gameState[i][j] == player) {
+			if (board[i][j] == player) {
 				++count;
 				if (count == 4) return true;
 			} else count = 0;
@@ -121,7 +124,7 @@ class Solution {
 	}
 
 	private void printBoard() {
-		for (int[] row : gameState) {
+		for (int[] row : board) {
 			for (int column : row) {
 				System.out.print(column + " ");
 			}
