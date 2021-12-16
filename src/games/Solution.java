@@ -7,19 +7,10 @@ class Solution {
 		solution.play(1);
 		solution.play(1);
 		solution.play(2);
-		solution.play(3);
+		solution.play(2);
 		solution.play(2);
 		solution.play(3);
 		solution.play(3);
-		solution.play(2);
-		solution.play(4);
-		solution.play(4);
-		solution.play(5);
-		solution.play(4);
-		solution.play(4);
-		solution.play(4);
-		solution.play(4);
-		solution.play(4);
 	}
 
 	int player = 1;
@@ -88,33 +79,22 @@ class Solution {
 	}
 
 	private boolean checkDiagonal(int row, int column) {
+		int i, j;
+		for (i = row, j = column; i < board.length - 1 && j < board.length - 1; i++, j++);
+
 		int count = 0;
-		for (int i = row, j = column; i < board.length && j < board.length; i++, j++) {
-			if (board[i][j] == player) {
+		while (i >= 0 && j >= 0) {
+			if (board[i--][j--] == player) {
 				++count;
 				if (count == 4) return true;
 			} else count = 0;
 		}
 
 		count = 0;
-		for (int i = row, j = column; i >= 0 && j < board.length; i--, j++) {
-			if (board[i][j] == player) {
-				++count;
-				if (count == 4) return true;
-			} else count = 0;
-		}
+		for (i = row, j = column; i > 0 && j < board.length - 1; i--, j++);
 
-		count = 0;
-		for (int i = row, j = column; i < board.length && j >= 0; i++, j--) {
-			if (board[i][j] == player) {
-				++count;
-				if (count == 4) return true;
-			} else count = 0;
-		}
-
-		count = 0;
-		for (int i = row, j = column; i >= 0 && j >= 0; i--, j--) {
-			if (board[i][j] == player) {
+		while (i < board.length && j >= 0) {
+			if (board[i++][j--] == player) {
 				++count;
 				if (count == 4) return true;
 			} else count = 0;
